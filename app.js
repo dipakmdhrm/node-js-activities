@@ -1,14 +1,13 @@
-var fs = require('fs');
+var http = require('http');
 
-// Check if file exists.
-if (fs.existsSync('./WRITEME.md'))
-  // Delete file.
-  fs.unlinkSync('./WRITEME.md');
+var server = http.createServer(function (request, response){
+  console.log(request.url);
+  response.writeHead(200, {
+    'Content-Type': 'text/plain'
+  })
 
-// Create directory.
-if (!fs.existsSync('demoDir'))
-  fs.mkdirSync('demoDir');
+  response.end('Hello world!');
+});
 
-// Delete directory.
-if (fs.existsSync('demoDir'))
-  fs.rmdirSync('demoDir');
+server.listen(3000, '0.0.0.0');
+console.log('Listening to 3000!')
