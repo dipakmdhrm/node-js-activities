@@ -1,20 +1,3 @@
-// Normal functions statements.
-function sayHello() {
-  console.log('Hello world!');
-}
+var sum = require (__dirname + '/sum');
 
-sayHello();
-
-// Function expressions.
-var sayBye = function() {
-  console.log('Bye world!');
-}
-
-sayBye();
-
-// Function inside function.
-function callFun(fun) {
-  fun();
-}
-
-callFun(sayBye);
+console.log(sum([1, 2, 3, 4, 5]));
