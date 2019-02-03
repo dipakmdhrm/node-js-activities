@@ -1,6 +1,18 @@
-var basicMaths = require (__dirname + '/basicMaths');
+var events = require('events');
+var util = require('util');
 
-console.log(basicMaths.adder([1, 2, 3, 4, 5]));
-console.log(basicMaths.subtractor(5, 1));
-console.log(basicMaths.multiplier([1, 2, 3, 4, 5]));
-console.log(basicMaths.divider(6, 2));
+var Person = function (name) {
+  this.name = name
+};
+
+util.inherits(Person, events.EventEmitter);
+
+var James = new Person('James');
+var Jill = new Person('Jill');
+var Johan = new Person('Johan');
+
+var people = [James, Jill, Johan];
+
+people.forEach((person) => person.on('speak', (message) => console.log(`${person.name} said: ${message}`)));
+
+James.emit('speak', 'Hey Jill, Hey Johan!!')
