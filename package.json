@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dipakmdhrm/node-js-activities/issues"
   },
-  "homepage": "https://github.com/dipakmdhrm/node-js-activities#readme"
+  "homepage": "https://github.com/dipakmdhrm/node-js-activities#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
