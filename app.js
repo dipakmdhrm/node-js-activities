@@ -19,7 +19,12 @@ app.get('/contact', function (request, response) {
 app.get('/profile/:name', function (request, response) {
   var data = {
     age: 28,
-    job: 'Developer'
+    job: 'Developer',
+    hobbies: [
+      'Sports',
+      'Books',
+      'Food',
+    ]
   };
   response.render('profile', {
     username: request.params.name,
