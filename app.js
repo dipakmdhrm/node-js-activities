@@ -6,9 +6,13 @@ var app = express();
 app.listen(3000);
 
 app.get('/', function(request, response){
-  response.send('Hello world!!');
+  response.sendFile(__dirname + '/index.html');
+});
+
+app.get('/contact', function (request, response) {
+  response.sendFile(__dirname + '/contact.html');
 });
 
 app.get('/profile/:id', function (request, response) {
-  response.send(`Hello profile ${request.params.id}!!`);
+  response.sendFile(__dirname + '/profile.html');
 });
