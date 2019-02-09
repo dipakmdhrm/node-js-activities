@@ -1,6 +1,9 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 
 var app = express();
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // Set EJS as the view/template engine.
 app.set('view engine', 'ejs');
@@ -19,6 +22,16 @@ app.get('/', function(request, response){
 // Contact page.
 app.get('/contact', function (request, response) {
   response.render('contact');
+});
+
+// Contact page submission handler.
+app.post('/contact', urlencodedParser,function (request, response) {
+  if (!request.body) {
+    return response.sendStatus(400);
+  }
+  response.render('contact-success', {
+    data: request.body
+  });
 });
 
 // Profile page.

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Node Tutorial site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/styles/main.css">
+</head>
+<body>
+  <div id="main-wrapper">
+    <% include partials/nav.ejs %>
+    <h1>Thank you for contacting us</h1>
+    <p>
+      Hey <strong><%= data.name %></strong>! Your following message was successfully submitted:
+      <blockquote><i>
+        <%= data.message %>
+      </i></blockquote>
+      We've also sent a confirmation mail to your email id: <strong><%= data.email%></strong>.
+    </p>
+  </div>
+</body>
+
+</html>
