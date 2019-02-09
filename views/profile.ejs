@@ -22,9 +22,11 @@
 
 <body>
   <div id="main-wrapper">
-    <h1>Profile page</h1>
-    <h2>Placeholder text until we integrate a templating engine.</a>.
-    </h2>
+    <h1>Welcome to profile page of <%= username %></h1>
+    <p>
+      <strong>Age: </strong><%= data.age %><br/>
+      <strong>Job: </strong><%= data.job %>
+    </p>
   </div>
 </body>
 

@@ -2,17 +2,27 @@ var express = require('express');
 
 var app = express();
 
+// Set EJS as the view/template engine.
+app.set('view engine', 'ejs');
+
 // Start the server.
 app.listen(3000);
 
 app.get('/', function(request, response){
-  response.sendFile(__dirname + '/index.html');
+  response.render('index');
 });
 
 app.get('/contact', function (request, response) {
-  response.sendFile(__dirname + '/contact.html');
+  response.render('contact');
 });
 
-app.get('/profile/:id', function (request, response) {
-  response.sendFile(__dirname + '/profile.html');
+app.get('/profile/:name', function (request, response) {
+  var data = {
+    age: 28,
+    job: 'Developer'
+  };
+  response.render('profile', {
+    username: request.params.name,
+    data: data
+  });
 });
