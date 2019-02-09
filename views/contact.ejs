@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Weldome to Node Tutorial site</title>
+  <title>Node Tutorial site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-  <script src="main.js"></script>
-  <style>
-    body {
-      background-color: lightseagreen;
-    }
-
-    #main-wrapper {
-      width: 960px;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/styles/main.css">
 </head>
-
 <body>
   <div id="main-wrapper">
     <% include partials/nav.ejs %>
     <h1>Contact Us</h1>
     <h2>Please feel free to <a href = "mailto: dipakmdhrm@gmail.com">Email us</a>.</h2>
+    <form id="contact">
+      <label for="name">Name</label>
+      <input type="text" name="name" size="50"/><br/>
+      <label for="email">Email</label>
+      <input type="email" name="email" size="50"/><br/>
+      <label for="message">Message</label>
+      <textarea rows="5" cols="50" name="message"></textarea><br/>
+      <input type="submit" value="Submit"/>
+    </form>
   </div>
 </body>
 
