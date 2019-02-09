@@ -1,13 +1,14 @@
-var http = require('http');
+var express = require('express');
 
-var server = http.createServer(function (request, response){
-  console.log(request.url);
-  response.writeHead(200, {
-    'Content-Type': 'text/plain'
-  })
+var app = express();
 
-  response.end('Hello world!');
+// Start the server.
+app.listen(3000);
+
+app.get('/', function(request, response){
+  response.send('Hello world!!');
 });
 
-server.listen(3000, '0.0.0.0');
-console.log('Listening to 3000!')
+app.get('/profile/:id', function (request, response) {
+  response.send(`Hello profile ${request.params.id}!!`);
+});
